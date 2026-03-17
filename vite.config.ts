@@ -7,9 +7,8 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: '/',           // ← Essencial para Vercel (era o problema da tela branca)
+  base: '/',
   build: {
     outDir: 'dist',
-    sourcemap: false,
   },
 })
