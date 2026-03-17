@@ -1,12 +1,12 @@
 // components/Dashboard.tsx — Dashboard principal com gráficos Recharts
-import { memo, useMemo, useCallback } from 'react'
+import { memo, useMemo } from 'react'
 import {
   BarChart, Bar,
   LineChart, Line,
   AreaChart, Area,
-  PieChart, Pie, Cell, Sector,
-  ScatterChart, Scatter, ZAxis,
-  XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
+  PieChart, Pie, Cell,
+  ScatterChart, Scatter,
+  XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
 } from 'recharts'
 import { TrendingUp, BarChart2, Trash2 } from 'lucide-react'
 import { useDashboardStore, type ChartConfig, type DataRow } from '../store/useDashboardStore'
@@ -183,7 +183,6 @@ const SingleChart = memo(({ config, data }: SingleChartProps) => {
             <CartesianGrid strokeDasharray="3 3" className="opacity-20 dark:opacity-10" />
             <XAxis dataKey="x" type="number" name={config.xKey} {...axisProps} />
             <YAxis dataKey="y" type="number" name={config.yKey} {...axisProps} width={40} />
-            <ZAxis range={[30, 30]} />
             <Tooltip cursor={{ strokeDasharray: '3 3' }} content={<CustomTooltip />} />
             <Scatter data={chartData} fill={config.color} fillOpacity={0.7} />
           </ScatterChart>
