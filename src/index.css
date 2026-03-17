@@ -1,0 +1,134 @@
+/* index.css — Tailwind v4 com @import moderno */
+@import "tailwindcss";
+
+/* =========================================================
+   VARIÁVEIS DE TEMA CUSTOMIZADAS
+   ========================================================= */
+@theme {
+  --font-sans: "DM Sans", sans-serif;
+  --font-mono: "DM Mono", monospace;
+
+  /* Paleta principal: slate + indigo accent */
+  --color-brand-50:  #eef2ff;
+  --color-brand-100: #e0e7ff;
+  --color-brand-200: #c7d2fe;
+  --color-brand-300: #a5b4fc;
+  --color-brand-400: #818cf8;
+  --color-brand-500: #6366f1;
+  --color-brand-600: #4f46e5;
+  --color-brand-700: #4338ca;
+  --color-brand-800: #3730a3;
+  --color-brand-900: #312e81;
+
+  /* Teal como accent secundário */
+  --color-accent-400: #2dd4bf;
+  --color-accent-500: #14b8a6;
+  --color-accent-600: #0d9488;
+
+  /* Animações customizadas */
+  --animate-fade-in: fade-in 0.3s ease-out;
+  --animate-slide-up: slide-up 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-spin-slow: spin 3s linear infinite;
+}
+
+/* =========================================================
+   KEYFRAMES
+   ========================================================= */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================================
+   BASE STYLES
+   ========================================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar customizada — apenas Webkit */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 99px;
+}
+.dark ::-webkit-scrollbar-thumb { background: #334155; }
+
+/* Foco acessível */
+:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   UTILIDADES GLOBAIS
+   ========================================================= */
+
+/* Animações */
+.animate-fade-in  { animation: var(--animate-fade-in); }
+.animate-slide-up { animation: var(--animate-slide-up); }
+
+/* Card padrão do sistema */
+.card {
+  @apply bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm;
+}
+
+/* Botão primário */
+.btn-primary {
+  @apply inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-500 hover:bg-brand-600
+         text-white text-sm font-medium transition-colors duration-150 cursor-pointer;
+}
+
+/* Botão ghost */
+.btn-ghost {
+  @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium
+         text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700
+         transition-colors duration-150 cursor-pointer;
+}
+
+/* Input base */
+.input-base {
+  @apply w-full px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-600
+         bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100
+         text-sm placeholder-slate-400 dark:placeholder-slate-500
+         focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent
+         transition-shadow duration-150;
+}
+
+/* Select base */
+.select-base {
+  @apply input-base appearance-none cursor-pointer;
+}
+
+/* Label */
+.label {
+  @apply block text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-1;
+}
+
+/* Badge */
+.badge {
+  @apply inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium;
+}
+
+/* Texto de destaque com gradiente */
+.text-gradient {
+  @apply bg-gradient-to-r from-brand-500 to-accent-500 bg-clip-text text-transparent;
+}
+
+/* Fundo do app */
+.app-bg {
+  @apply bg-slate-50 dark:bg-slate-900 min-h-screen;
+}
