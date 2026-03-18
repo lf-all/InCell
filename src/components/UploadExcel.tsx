@@ -95,9 +95,7 @@ const UploadExcel = memo(() => {
           <div className="w-12 h-12 rounded-2xl bg-brand-500 flex items-center justify-center shadow-lg shadow-brand-500/30">
             <FileSpreadsheet size={24} className="text-white" />
           </div>
-          <h1 className="text-3xl font-bold text-slate-800 dark:text-slate-100">
-            Meu <span className="text-gradient">Dashboard Excel</span>
-          </h1>
+          <h1 className="text-3xl font-bold text-slate-800 dark:text-slate-100">Incell</h1>
         </div>
         <p className="text-slate-500 dark:text-slate-400 text-base">
           Carregue uma planilha e crie visualizações interativas em segundos
