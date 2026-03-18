@@ -1,13 +1,12 @@
 @import "tailwindcss";
 
 /* =========================================================
-   VARIÁVEIS DE TEMA CUSTOMIZADAS (Tailwind v4)
+   TEMA CUSTOMIZADO
    ========================================================= */
 @theme {
-  --font-sans: "DM Sans", sans-serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
   --font-mono: "DM Mono", monospace;
 
-  /* Paleta principal */
   --color-brand-50:  #eef2ff;
   --color-brand-100: #e0e7ff;
   --color-brand-200: #c7d2fe;
@@ -23,7 +22,6 @@
   --color-accent-500: #14b8a6;
   --color-accent-600: #0d9488;
 
-  /* Animações */
   --animate-fade-in: fade-in 0.3s ease-out;
   --animate-slide-up: slide-up 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -42,112 +40,66 @@
 }
 
 /* =========================================================
-   UTILIDADES GLOBAIS (agora como @utility)
+   CLASSES CUSTOMIZADAS (forma correta para Tailwind v4)
    ========================================================= */
 
-@utility card {
-  background-color: var(--color-white);
-  border-radius: 16px;
-  border: 1px solid rgb(226 232 240);
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05);
+.card {
+  @apply bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm;
 }
 
-.dark @utility card {
-  background-color: rgb(15 23 42);
-  border-color: rgb(51 65 85);
+.btn-primary {
+  @apply inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-500 hover:bg-brand-600 
+         text-white text-sm font-medium transition-colors duration-150 cursor-pointer;
 }
 
-@utility btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  border-radius: 12px;
-  background-color: var(--color-brand-500);
-  color: white;
-  font-size: 0.875rem;
-  font-weight: 500;
-  transition: all 0.15s;
+.btn-ghost {
+  @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium
+         text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700
+         transition-colors duration-150 cursor-pointer;
 }
 
-@utility btn-primary:hover {
-  background-color: var(--color-brand-600);
+.input-base {
+  @apply w-full px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-600
+         bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100
+         text-sm placeholder-slate-400 dark:placeholder-slate-500
+         focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent
+         transition-shadow duration-150;
 }
 
-@utility btn-ghost {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: rgb(71 85 105);
-  transition: all 0.15s;
+.label {
+  @apply block text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-1;
 }
 
-.dark @utility btn-ghost {
-  color: rgb(148 163 184);
+.badge {
+  @apply inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium;
 }
 
-@utility btn-ghost:hover {
-  background-color: rgb(241 245 249);
+.text-gradient {
+  @apply bg-gradient-to-r from-brand-500 to-accent-500 bg-clip-text text-transparent;
 }
 
-.dark @utility btn-ghost:hover {
-  background-color: rgb(51 65 85);
-}
-
-@utility input-base {
-  width: 100%;
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: 1px solid rgb(226 232 240);
-  background-color: white;
-  font-size: 0.875rem;
-  transition: all 0.15s;
-}
-
-.dark @utility input-base {
-  border-color: rgb(51 65 85);
-  background-color: rgb(15 23 42);
-  color: white;
-}
-
-@utility label {
-  display: block;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: rgb(100 116 139);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 4px;
-}
-
-.dark @utility label {
-  color: rgb(148 163 184);
+.app-bg {
+  @apply bg-slate-50 dark:bg-slate-900 min-h-screen;
 }
 
 /* Scrollbar customizada */
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
 ::-webkit-scrollbar-thumb {
   background: #cbd5e1;
   border-radius: 99px;
 }
-.dark ::-webkit-scrollbar-thumb { background: #334155; }
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
 
 /* Foco acessível */
 :focus-visible {
   outline: 2px solid var(--color-brand-500);
   outline-offset: 2px;
-}
-
-/* Fundo do app */
-.app-bg {
-  background-color: rgb(248 250 252);
-}
-
-.dark .app-bg {
-  background-color: rgb(15 23 42);
 }
