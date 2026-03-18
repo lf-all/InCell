@@ -10,7 +10,7 @@
 
 **Incell** é uma aplicação web moderna e responsiva para visualizar, analisar e exportar dados de arquivos Excel com gráficos configuráveis, tabelas dinâmicas e suporte a dark mode.
 
-[🌐 Demo](https://seu-usuario.github.io/incell) • [📖 Documentação](#-documentação) • [🚀 Começar](#-início-rápido)
+[🌐 Demo](https://in-cell.vercel.app/) • [📖 Documentação](#-documentação) • [🚀 Começar](#-início-rápido)
 
 </div>
 
@@ -117,74 +117,6 @@ Os arquivos otimizados serão gerados em `/dist`
 
 ```bash
 npm run preview
-```
-
----
-
-## 🌐 Deploy no GitHub Pages
-
-### ⚡ Opção 1: GitHub Actions (Recomendado — Automático)
-
-**Passo 1:** Configure o repositório
-```bash
-# Se ainda não tem git init
-git init
-git add .
-git commit -m "chore: initial commit"
-git branch -M main
-git remote add origin https://github.com/seu-usuario/incell.git
-git push -u origin main
-```
-
-**Passo 2:** Ative GitHub Pages no repositório
-1. Vá em **Settings** → **Pages**
-2. Em "Source", selecione **GitHub Actions**
-
-**Passo 3:** Aguarde a automação
-- O workflow em `.github/workflows/deploy.yml` executa automaticamente
-- Em ~2 minutos, sua aplicação estará online em:
-  ```
-  https://seu-usuario.github.io/incell/
-  ```
-
-✅ **A vantagem:** Deploy automático a cada push para `main`
-
----
-
-### 📦 Opção 2: Deploy Manual com gh-pages
-
-Se preferir controle manual:
-
-```bash
-# Instale gh-pages globalmente (uma única vez)
-npm install -g gh-pages
-
-# Build + Deploy
-npm run build
-npx gh-pages -d dist
-```
-
-Após 1-2 minutos, acesse:
-```
-https://seu-usuario.github.io/incell/
-```
-
----
-
-### ⚙️ Configurar para Outro Nome de Repositório
-
-Se clonar este projeto com um nome diferente, atualize:
-
-**`vite.config.ts`**
-```ts
-base: '/seu-novo-nome-repo/',
-```
-
-**Exemplos:**
-```ts
-base: '/dashboard/',              // → seu-usuario.github.io/dashboard/
-base: '/excel-viewer/',           // → seu-usuario.github.io/excel-viewer/
-base: '/incell/',                 // → seu-usuario.github.io/incell/ (padrão)
 ```
 
 ---
@@ -382,8 +314,6 @@ MIT — Uso livre para projetos pessoais e comerciais.
 ```
 MIT License
 
-Copyright (c) 2024 Incell Contributors
-
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -413,8 +343,8 @@ Tem ideias para melhorias? Abra uma issue ou pull request!
 ## 📞 Suporte
 
 - 📖 Veja a [documentação oficial do Vite](https://vite.dev)
-- 💬 Abra uma [discussão no GitHub](https://github.com/seu-usuario/incell/discussions)
-- 🐛 Reporte bugs via [Issues](https://github.com/seu-usuario/incell/issues)
+- 💬 Abra uma [discussão no GitHub](https://github.com/lf-all/InCell/discussions)
+- 🐛 Reporte bugs via [Issues](https://github.com/lf-all/InCell/issues)
 
 ---
 
@@ -434,6 +364,6 @@ Tem ideias para melhorias? Abra uma issue ou pull request!
 
 **Feito com ❤️ usando React + Vite**
 
-[⭐ Dê uma estrela se foi útil!](https://github.com/seu-usuario/incell)
+[⭐ Dê uma estrela se foi útil!](https://github.com/lf-all/InCell)
 
 </div>
